@@ -21,6 +21,7 @@ namespace MiddlewareDemo.Middleware
         public async Task Invoke(HttpContext context)
         {
             _logger.LogInformation("User Ip:" + context.Connection.RemoteIpAddress.ToString());
+            _logger.LogError("Test Erro Log");
             await _next.Invoke(context);
         }
     }
